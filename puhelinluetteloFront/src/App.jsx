@@ -143,6 +143,11 @@ const App = () => {
         setNewName("");
         setnewNumber("")
       })
+      .catch(error => {
+        setErrorMessage(error.response.data.error)
+        setNotificationType("error")
+        setTimeout(() => setErrorMessage(null), 3000)
+      })
     }
   };
 
